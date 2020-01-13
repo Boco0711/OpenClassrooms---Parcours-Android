@@ -3,7 +3,6 @@ package com.openclassrooms.magicgithub.repository;
 import com.openclassrooms.magicgithub.api.ApiService;
 import com.openclassrooms.magicgithub.model.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository {
@@ -15,14 +14,14 @@ public class UserRepository {
     }
 
     public List<User> getUsers() {
-        return apiService.getUsers();
+        return this.apiService.getUsers();
         }
 
     public void generateRandomUser() {
-        apiService.getUsers().add(User.random());
+        this.apiService.generateRandomUser();
     }
 
     public void deleteUser(User user) {
-        apiService.getUsers().remove(user);
+        this.apiService.deleteUser(user);
     }
 }
